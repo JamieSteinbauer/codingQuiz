@@ -46,6 +46,7 @@ function showQuestion(question) {
     button.addEventListener("click", selectAnswer);
     answerButtonsElement.appendChild(button);
   });
+  timeRemaining();
 }
 
 //reset the state of the container so that it reverts back to the original form
@@ -128,7 +129,7 @@ let timerId;
 //timer function
 function timeRemaining() {
   //check if user guessed wrong
-  if (questions.value !== questions[currentQuestionIndex].answers) {
+  if (this.value !== questions[currentQuestionIndex].answers) {
     //penalize time
     time -= 5;
     console.log("points taken off");
@@ -189,7 +190,7 @@ function quizEnd() {
   finalScoreEl.textContent = time;
 
   // hide questions section
-  questionContainerElement.setAttribute("class", "hide");
+  questionContainerElement.classList.add("hide");
 }
 
 //the event listener for clicking on the start or next button

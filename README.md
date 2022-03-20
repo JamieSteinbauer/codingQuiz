@@ -7,6 +7,6 @@ A website that hosts a timed quiz about coding principles and stores scores loca
 HTML, CSS, JavaScript, and Web APIs
 
 ## Website
-
+https://jamiesteinbauer.github.io/codingQuiz/
 
 ## Screenshot
