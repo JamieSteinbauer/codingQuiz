@@ -1,6 +1,6 @@
 *, *::before, *::after {
     box-sizing: border-box;
-    font-family: Gotham Rounded;
+    font-family: 'Times New Roman', Times, serif
   }
   
   :root {
@@ -14,6 +14,7 @@
     padding: 0;
     margin: 0;
     display: flex;
+    flex-direction: column;
     width: 100vw;
     height: 100vh;
     justify-content: center;
@@ -30,8 +31,8 @@
   }
   
   .container {
-    width: 800px;
-    max-width: 80%;
+    width: 500px;
+    max-width: 50%;
     background-color: white;
     border-radius: 5px;
     padding: 10px;
@@ -82,6 +83,16 @@
   
   .hide {
     display: none;
+  }
+
+  #timer {
+      position: absolute;
+      top: 5px;
+      left: 5px;
+  }
+
+  .greeting {
+
   }
 
   

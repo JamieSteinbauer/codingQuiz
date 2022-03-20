@@ -1,28 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link href="./assets/css/style.css" rel="stylesheet">
-  <title>Quiz App</title>
-</head>
-<body>
-  <div class="container">
-    <div id="question-container" class="hide">
-      <div id="question">Question</div>
-      <div id="answer-buttons" class="btn-grid">
-        <button class="btn">Answer 1</button>
-        <button class="btn">Answer 2</button>
-        <button class="btn">Answer 3</button>
-        <button class="btn">Answer 4</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="./assets/css/style.css" rel="stylesheet" />
+    <title>Coding Quiz</title>
+  </head>
+  <body>
+      <!-- highscore link -->
+    <header>
+        <h2 id="highscore"></h2>
+    </header>
+
+    <!-- timer -->
+    <section id="timer">
+        <p id="countdown">70 seconds remaining...</p>
+    </section>
+
+    <!-- greeting element -->
+    <section id="greeting" class="greeting">
+      <h2>Welcome to Coding Quiz!</h2>
+      <p>Choose correctly... or else.</p>
+    </section>
+
+    <!-- container for question and buttons -->
+    <div class="container">
+      <div id="question-container" class="hide">
+        <div id="question">Question</div>
+        <div id="answer-buttons" class="btn-grid">
+          <button class="btn">Answer 1</button>
+          <button class="btn">Answer 2</button>
+          <button class="btn">Answer 3</button>
+          <button class="btn">Answer 4</button>
+        </div>
+      </div>
+      <!-- controls nested in container element -->
+      <div class="controls">
+        <button id="start-btn" class="start-btn btn">Start</button>
+        <button id="next-btn" class="next-btn btn hide">Next</button>
       </div>
     </div>
-    <div class="controls">
-      <button id="start-btn" class="start-btn btn">Start</button>
-      <button id="next-btn" class="next-btn btn hide">Next</button>
-    </div>
-  </div>
-  <script src="./assets/js/script.js"></script>
-</body>
+
+    <script src="./assets/js/script.js"></script>
+  </body>
 </html>
