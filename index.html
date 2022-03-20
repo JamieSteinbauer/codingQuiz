@@ -9,9 +9,10 @@
     <title>Coding Quiz</title>
   </head>
   <body>
+    <!-- highscores link-->
+    <div class="scores"><a href="score.html">View Highscores</a></div>
     <!-- timer -->
     <section id="timer">
-        <p>70</p>
     </section>
 
     <!-- greeting element -->
@@ -39,14 +40,15 @@
       </div>
     </div>
 
+    <!-- highscore end screen -->
     <div id="end-screen" class="hide">
-        <h2>All done!</h2>
-        <p>Your final score is <span id="final-score"></span>.</p>
-        <p>
-          Enter initials: <input type="text" id="initials" max="3" />
-          <button id="submit">Submit</button>
-        </p>
-      </div>
+      <h2>All done!</h2>
+      <p>Your final score is <span id="final-score"></span>.</p>
+      <p>
+        Enter initials: <input type="text" id="initials" max="3" />
+        <button id="submit">Submit</button>
+      </p>
+    </div>
 
     <script src="./assets/js/script.js"></script>
   </body>
