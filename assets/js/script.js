@@ -5,9 +5,12 @@ const questionContainerElement = document.getElementById('question-container');
 const questionElement = document.getElementById('question');
 const answerButtonsElement = document.getElementById('answer-buttons');
 const greetingEl = document.getElementById('greeting');
+const timerEl = document.getElementById('timer');
+const submitBtn = document.getElementById('submit');
 
 //undeclared variable allows for shuffled index
 let shuffledQuestions, currentQuestionIndex
+
 
 
 //the event listener for clicking on the start or next button
@@ -17,11 +20,17 @@ nextButton.addEventListener('click', () => {
   setNextQuestion()
 });
 
+//submit initials
+submitBtn.onlick = saveHighScore;
 
 //function to start game, shuffle questions randomly, and hide start button and greeting
 function startGame() {
   startButton.classList.add('hide');
   greetingEl.classList.add('hide');
+  //start timer
+  timerId = setInterval(clockTick, 1000);
+  //show starting time
+  timerEl.textContent = time + ' seconds remaining';
   shuffledQuestions = questions.sort(() => Math.random() - .5);
   currentQuestionIndex = 0
   questionContainerElement.classList.remove('hide');
@@ -56,6 +65,7 @@ function resetState() {
   while (answerButtonsElement.firstChild) {
     answerButtonsElement.removeChild(answerButtonsElement.firstChild)
   }
+  //TODO add something to reset time
 };
 
 //use selectAnswer function to choose an answer then find out whether they should restart or continue through the array of questions
@@ -72,6 +82,7 @@ function selectAnswer(e) {
     startButton.innerText = 'Restart'
     startButton.classList.remove('hide')
   }
+  clearInterval();
 };
 
 
@@ -91,6 +102,46 @@ function clearStatusClass(element) {
   element.classList.remove('wrong');
 };
 
+//timer function
+function timeRemaining() {
+    //check if user guessed wrong
+    if (this.value !== questions[currentQuestionIndex].answers) {
+        time -= 15;
+
+        if (time < 0) {
+            time = 0;
+        }
+    }
+    timerEl.textContent = time;
+}
+
+function clockTick() {
+    time--;
+    timerEl.textContent = time;
+
+    if (time <= 0) {
+        clearInterval(timerId);
+    }
+}
+
+function saveHighScore() {
+    var initials = initialsEl.value.trim();
+
+    if (initials !== "") {
+        var highscores = 
+        JSON.parse(window.localStorage.getItem("highscores")) || [];
+
+        var newScore = {
+            score: time,
+            initials: initials
+        };
+
+        highscores.push(newScore);
+        window.localStorage.setItem("highscores", JSON.stringify(highscores));
+
+        //TODO add high scores element
+    }
+}
 
 // array for questions 
 const questions = [
@@ -123,3 +174,6 @@ const questions = [
   }
 ]
 
+// quiz state variable
+var time = questions.length * 15;
+var timerId;
