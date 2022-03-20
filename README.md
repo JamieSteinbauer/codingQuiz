@@ -10,3 +10,4 @@ HTML, CSS, JavaScript, and Web APIs
 https://jamiesteinbauer.github.io/codingQuiz/
 
 ## Screenshot
+![_Users_jamiesteinbauer_Desktop_codingQuiz2_index html](https://user-images.githubusercontent.com/97713001/159173011-19d122fa-1dbf-4373-ab53-6a275dba7960.png)
